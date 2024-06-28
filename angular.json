@@ -62,10 +62,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "host": "localhost",
-            "port": 3000,
+            "port": 44355,
             "ssl": true,
-            "sslKey": "certs/localhost.key",
-            "sslCert": "certs/localhost.crt"
+            "sslKey": "certs/outlook-addin-localhost.key",
+            "sslCert": "certs/outlook-addin-localhost.crt"
           },
           "configurations": {
             "production": {
@@ -104,5 +104,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

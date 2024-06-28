@@ -1,160 +1,207 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
-  xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0" xsi:type="MailApp">
-  <Id>{CREATE-A-GUID-AND-INSERT-IT-HERE}</Id>
-  <Version>1.0.0.0</Version>
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Created:ce44715c-8c4e-446b-879c-ea9ebe0f09c8-->
+<OfficeApp
+          xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+          xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
+          xsi:type="MailApp">
+
+  <!-- Begin Basic Settings: Add-in metadata, used for all versions of Office unless override provided. -->
+
+  <!-- IMPORTANT! Id must be unique for your add-in, if you reuse this manifest ensure that you change this id to a new GUID. -->
+  <Id>3E248EB6-FF40-420B-8D14-D20DDDF83021</Id>
+
+  <!--Version. Updates from the store only get triggered if there is a version change. -->
+  <Version>1.0.0.1</Version>
   <ProviderName>Contoso</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="Outlook Addin"/>
-  <Description DefaultValue="An Office Add-in."/>
-  <IconUrl DefaultValue="https://localhost:{INSERT-HOST-PORT-HERE}/assets/icon-32.png"/>
-  <HighResolutionIconUrl DefaultValue="https://localhost:{INSERT-HOST-PORT-HERE}/assets/icon-64.png"/>
-  <SupportUrl DefaultValue="https://learn.microsoft.com/office/dev/add-ins/overview/office-add-in-code-samples"/>
+  <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
+  <DisplayName DefaultValue="AttachmentDemoWeb2" />
+  <Description DefaultValue="AttachmentDemoWeb2 Description"/>
+  <IconUrl DefaultValue="https://localhost:44355/Images/add-in-icon-lo-res.png"/>
+
+  <SupportUrl DefaultValue="https://github.com/OfficeDev/Outlook-Add-in-SSO" />
+  <!-- Domains that will be allowed when navigating. For example, if you use ShowTaskpane and then have an href link, navigation will only be allowed if the domain is on this list. -->
   <AppDomains>
     <AppDomain>https://login.microsoftonline.com</AppDomain>
-    <AppDomain>https://localhost:{INSERT-HOST-PORT-HERE}</AppDomain>
   </AppDomains>
+  <!--End Basic Settings. -->
+
   <Hosts>
-    <Host Name="Mailbox"/>
+    <Host Name="Mailbox" />
   </Hosts>
   <Requirements>
     <Sets>
-      <Set Name="Mailbox" MinVersion="1.1"/>
+      <Set Name="Mailbox" MinVersion="1.1" />
     </Sets>
   </Requirements>
   <FormSettings>
     <Form xsi:type="ItemRead">
       <DesktopSettings>
-        <SourceLocation DefaultValue="https://localhost:{INSERT-HOST-PORT-HERE}/index.html"/>
+        <SourceLocation DefaultValue="https://localhost:44355/"/>
         <RequestedHeight>250</RequestedHeight>
       </DesktopSettings>
     </Form>
   </FormSettings>
-  <Permissions>ReadWriteItem</Permissions>
+
+  <Permissions>ReadItem</Permissions>
   <Rule xsi:type="RuleCollection" Mode="Or">
-    <Rule xsi:type="ItemIs" ItemType="Appointment" FormType="Edit"/>
-    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Edit"/>
+    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" />
   </Rule>
   <DisableEntityHighlighting>false</DisableEntityHighlighting>
+
+
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
     <Requirements>
       <bt:Sets DefaultMinVersion="1.3">
-        <bt:Set Name="Mailbox"/>
+        <bt:Set Name="Mailbox" />
       </bt:Sets>
     </Requirements>
     <Hosts>
       <Host xsi:type="MailHost">
-        <DesktopFormFactor>
 
-          <!-- Message read form -->
+        <DesktopFormFactor>
+          <!-- Message Read -->
           <ExtensionPoint xsi:type="MessageReadCommandSurface">
+            <!-- Use the default tab of the ExtensionPoint or create your own with <CustomTab id="myTab"> -->
             <OfficeTab id="TabDefault">
-              <Group id="msgReadDemoGroup">
-                 <Label resid="CommandsGroup.Label"/>
-                <!-- Task pane button - Save to SharePoint -->
-                <Control xsi:type="Button" id="msgReadOpenPaneButtonSave">
-                  <Label resid="TaskpaneButton.Label"/>
+              <!-- Up to 6 Groups added per Tab -->
+              <Group id="msgReadGroup">
+                <Label resid="groupLabel" />
+                <!-- Open task pane to save individual attachments -->
+                <Control xsi:type="Button" id="msgReadOpenPaneButton">
+                  <Label resid="paneReadButtonLabel" />
                   <Supertip>
-                    <Title resid="TaskpaneButton.SupertipTitle"/>
-                    <Description resid="TaskpaneButton.SupertipText"/>
+                    <Title resid="paneReadSuperTipTitle" />
+                    <Description resid="paneReadSuperTipDescription" />
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="Icon.16x16"/>
-                    <bt:Image size="32" resid="Icon.32x32"/>
-                    <bt:Image size="80" resid="Icon.80x80"/>
+                    <bt:Image size="16" resid="open-pane-icon16" />
+                    <bt:Image size="32" resid="open-pane-icon32" />
+                    <bt:Image size="64" resid="open-pane-icon64" />
+                    <bt:Image size="80" resid="open-pane-icon80" />
                   </Icon>
-                  <!-- For use with a Button Only -->
                   <Action xsi:type="ShowTaskpane">
-                    <SourceLocation resid="Taskpane.Url"/>
+                    <SourceLocation resid="messageReadTaskPaneUrl" />
                   </Action>
                 </Control>
+                <!-- Go to http://aka.ms/ButtonCommands to learn how to add more Controls: ExecuteFunction and Menu -->
               </Group>
             </OfficeTab>
           </ExtensionPoint>
+          <!-- Go to http://aka.ms/ExtensionPointsCommands to learn how to add more Extension Points: MessageRead, AppointmentOrganizer, AppointmentAttendee -->
         </DesktopFormFactor>
       </Host>
     </Hosts>
+
     <Resources>
       <bt:Images>
-        <bt:Image id="Icon.16x16" DefaultValue="https://localhost:{INSERT-HOST-PORT-HERE}/assets/icon-16.png"/>
-        <bt:Image id="Icon.32x32" DefaultValue="https://localhost:{INSERT-HOST-PORT-HERE}/assets/icon-32.png"/>
-        <bt:Image id="Icon.80x80" DefaultValue="https://localhost:{INSERT-HOST-PORT-HERE}/assets/icon-80.png"/>
+        <bt:Image id="save-all-icon16" DefaultValue="https://localhost:44355/Images/save-all-16.png"/>
+        <bt:Image id="save-all-icon32" DefaultValue="https://localhost:44355/Images/save-all-32.png"/>
+        <bt:Image id="save-all-icon64" DefaultValue="https://localhost:44355/Images/save-all-64.png"/>
+        <bt:Image id="save-all-icon80" DefaultValue="https://localhost:44355/Images/save-all-80.png"/>
+
+        <bt:Image id="open-pane-icon16" DefaultValue="https://localhost:44355/Images/open-pane-16.png"/>
+        <bt:Image id="open-pane-icon32" DefaultValue="https://localhost:44355/Images/open-pane-32.png"/>
+        <bt:Image id="open-pane-icon64" DefaultValue="https://localhost:44355/Images/open-pane-64.png"/>
+        <bt:Image id="open-pane-icon80" DefaultValue="https://localhost:44355/Images/open-pane-80.png"/>
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:{INSERT-HOST-PORT-HERE}/index.html"/>
+        <bt:Url id="messageReadTaskPaneUrl" DefaultValue="https://localhost:44355/index.html"/>
       </bt:Urls>
       <bt:ShortStrings>
-        <bt:String id="CommandsGroup.Label" DefaultValue="Outlook Addin"/>
-        <bt:String id="TaskpaneButton.Label" DefaultValue="Outlook Addin"/>
-        <bt:String id="TaskpaneButton.SupertipTitle" DefaultValue="Outlook Addin"/>
+        <bt:String id="groupLabel" DefaultValue="Save to OneDrive"/>
+        <bt:String id="saveAllAttachmentsLabel" DefaultValue="Save all attachments"/>
+        <bt:String id="saveAllAttachmentsTitle" DefaultValue="Save all attachments"/>
+        <bt:String id="paneReadButtonLabel" DefaultValue="Choose attachments"/>
+        <bt:String id="paneReadSuperTipTitle" DefaultValue="Choose attachments to save"/>
       </bt:ShortStrings>
       <bt:LongStrings>
-        <bt:String id="TaskpaneButton.SupertipText" DefaultValue="Open the Outlook Addin add-in"/>
+        <bt:String id="saveAllAttachmentsDesc" DefaultValue="Saves all attachments to the Outlook Attachments folder in your OneDrive. This will overwrite any files that already exist with the same name."/>
+        <bt:String id="paneReadSuperTipDescription" DefaultValue="Opens a pane so you can choose which attachments to save."/>
       </bt:LongStrings>
     </Resources>
 
-    <!-- VersionOverrides for the v1.1 schema -->
+    <!-- VersionOverrides v1.1 to add support for SSO -->
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
       <Requirements>
-        <bt:Sets DefaultMinVersion="1.13">
+        <bt:Sets DefaultMinVersion="1.5">
           <bt:Set Name="Mailbox" />
         </bt:Sets>
       </Requirements>
       <Hosts>
         <Host xsi:type="MailHost">
+
           <DesktopFormFactor>
-            <SupportsSharedFolders>true</SupportsSharedFolders>
-            
-            <!-- Message read form -->
+            <!-- Message Read -->
             <ExtensionPoint xsi:type="MessageReadCommandSurface">
+              <!-- Use the default tab of the ExtensionPoint -->
               <OfficeTab id="TabDefault">
-                <Group id="msgReadDemoGroup">
-                  <Label resid="CommandsGroup.Label" />
-                  <!-- Task pane button - Save to SharePoint -->
-                  <Control xsi:type="Button" id="msgReadOpenPaneButtonSave">
-                    <Label resid="TaskpaneButton.Label" />
+                <Group id="msgReadGroup">
+                  <Label resid="groupLabel" />
+                  <!-- Open task pane to save individual attachments -->
+                  <Control xsi:type="Button" id="msgReadOpenPaneButton">
+                    <Label resid="paneReadButtonLabel" />
                     <Supertip>
-                      <Title resid="TaskpaneButton.SupertipTitle" />
-                      <Description resid="TaskpaneButton.SupertipText" />
+                      <Title resid="paneReadSuperTipTitle" />
+                      <Description resid="paneReadSuperTipDescription" />
                     </Supertip>
                     <Icon>
-                      <bt:Image size="16" resid="Icon.16x16"/>
-                      <bt:Image size="32" resid="Icon.32x32"/>
-                      <bt:Image size="80" resid="Icon.80x80"/>
+                      <bt:Image size="16" resid="open-pane-icon16" />
+                      <bt:Image size="32" resid="open-pane-icon32" />
+                      <bt:Image size="64" resid="open-pane-icon64" />
+                      <bt:Image size="80" resid="open-pane-icon80" />
                     </Icon>
-                    <!-- For use with a Button Only -->
                     <Action xsi:type="ShowTaskpane">
-                      <SourceLocation resid="Taskpane.Url" />
-                      <SupportsPinning>true</SupportsPinning>
-                      <SupportsMultiSelect>true</SupportsMultiSelect>
+                      <SourceLocation resid="messageReadTaskPaneUrl" />
                     </Action>
                   </Control>
+                  <!-- Go to http://aka.ms/ButtonCommands to learn how to add more Controls: ExecuteFunction and Menu -->
                 </Group>
               </OfficeTab>
             </ExtensionPoint>
+            <!-- Go to http://aka.ms/ExtensionPointsCommands to learn how to add more Extension Points: MessageRead, AppointmentOrganizer, AppointmentAttendee -->
           </DesktopFormFactor>
         </Host>
       </Hosts>
+
       <Resources>
         <bt:Images>
-            <bt:Image id="Icon.16x16" DefaultValue="https://localhost:{INSERT-HOST-PORT-HERE}/assets/icon-16.png"/>
-            <bt:Image id="Icon.32x32" DefaultValue="https://localhost:{INSERT-HOST-PORT-HERE}/assets/icon-32.png"/>
-            <bt:Image id="Icon.80x80" DefaultValue="https://localhost:{INSERT-HOST-PORT-HERE}/assets/icon-80.png"/>
+          <bt:Image id="save-all-icon16" DefaultValue="https://localhost:44355/Images/save-all-16.png"/>
+          <bt:Image id="save-all-icon32" DefaultValue="https://localhost:44355/Images/save-all-32.png"/>
+          <bt:Image id="save-all-icon64" DefaultValue="https://localhost:44355/Images/save-all-64.png"/>
+          <bt:Image id="save-all-icon80" DefaultValue="https://localhost:44355/Images/save-all-80.png"/>
+
+          <bt:Image id="open-pane-icon16" DefaultValue="https://localhost:44355/Images/open-pane-16.png"/>
+          <bt:Image id="open-pane-icon32" DefaultValue="https://localhost:44355/Images/open-pane-32.png"/>
+          <bt:Image id="open-pane-icon64" DefaultValue="https://localhost:44355/Images/open-pane-64.png"/>
+          <bt:Image id="open-pane-icon80" DefaultValue="https://localhost:44355/Images/open-pane-80.png"/>
         </bt:Images>
         <bt:Urls>
-            <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:{INSERT-HOST-PORT-HERE}/index.html"/>
+          <bt:Url id="messageReadTaskPaneUrl" DefaultValue="https://localhost:44355/index.html"/>
         </bt:Urls>
         <bt:ShortStrings>
-            <bt:String id="CommandsGroup.Label" DefaultValue="Outlook Addin"/>
-            <bt:String id="TaskpaneButton.Label" DefaultValue="Outlook Addin"/>
-            <bt:String id="TaskpaneButton.SupertipTitle" DefaultValue="Outlook Addin"/>
+          <bt:String id="groupLabel" DefaultValue="Save to OneDrive"/>
+          <bt:String id="saveAllAttachmentsLabel" DefaultValue="Save all attachments"/>
+          <bt:String id="saveAllAttachmentsTitle" DefaultValue="Save all attachments"/>
+          <bt:String id="paneReadButtonLabel" DefaultValue="Choose attachments"/>
+          <bt:String id="paneReadSuperTipTitle" DefaultValue="Choose attachments to save"/>
         </bt:ShortStrings>
         <bt:LongStrings>
-            <bt:String id="TaskpaneButton.SupertipText" DefaultValue="Open the Outlook Addin add-in"/>
+          <bt:String id="saveAllAttachmentsDesc" DefaultValue="Saves all attachments to the Outlook Attachments folder in your OneDrive. This will overwrite any files that already exist with the same name."/>
+          <bt:String id="paneReadSuperTipDescription" DefaultValue="Opens a pane so you can choose which attachments to save."/>
         </bt:LongStrings>
       </Resources>
+
+      <WebApplicationInfo>
+        <Id>99138ecc-f6bf-48f5-99dd-5cd328db3b62</Id>
+        <Resource>api://localhost:44355/99138ecc-f6bf-48f5-99dd-5cd328db3b62</Resource>
+        <Scopes>
+          <Scope>openid</Scope>
+          <Scope>profile</Scope>
+        </Scopes>
+      </WebApplicationInfo>
     </VersionOverrides>
   </VersionOverrides>
 </OfficeApp>

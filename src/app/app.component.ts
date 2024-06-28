@@ -8,6 +8,15 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
+
 export class AppComponent {
   title = 'outlook-app';
+
+  public async onLoginClick(): Promise<void> {
+    const token: string = await Office.auth.getAccessToken({
+      allowConsentPrompt: true,
+      allowSignInPrompt: true
+    });
+    console.log(token);
+  }
 }
