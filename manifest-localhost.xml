@@ -182,7 +182,7 @@
                     <bt:Image size="48" scale="3" resid="app48icon_3x" />
                   </Icon>
                   <Action xsi:type="ShowTaskpane">
-                    <SourceLocation resid="mreadTaskPaneUrl" />
+                    <SourceLocation resid="messageReadTaskPaneUrl" />
                   </Action>
                 </Control>
               </Group>
