@@ -13,13 +13,13 @@
   <Id>3E248EB6-FF40-420B-8D14-D20DDDF83021</Id>
 
   <!--Version. Updates from the store only get triggered if there is a version change. -->
-  <Version>1.0.0.1</Version>
+  <Version>1.0.0.2</Version>
   <ProviderName>Contoso</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
   <DisplayName DefaultValue="SSO Demo Hosted" />
   <Description DefaultValue="SSO Demo Hosted Description"/>
-  <IconUrl DefaultValue="https://localhost:44355/Images/add-in-icon-lo-res.png"/>
+  <IconUrl DefaultValue="https://bundynaapoc.z26.web.core.windows.net/Images/add-in-icon-lo-res.png"/>
 
   <SupportUrl DefaultValue="https://github.com/OfficeDev/Outlook-Add-in-SSO" />
   <!-- Domains that will be allowed when navigating. For example, if you use ShowTaskpane and then have an href link, navigation will only be allowed if the domain is on this list. -->
@@ -39,7 +39,7 @@
   <FormSettings>
     <Form xsi:type="ItemRead">
       <DesktopSettings>
-        <SourceLocation DefaultValue="https://localhost:44355/"/>
+        <SourceLocation DefaultValue="https://bundynaapoc.z26.web.core.windows.net/"/>
         <RequestedHeight>250</RequestedHeight>
       </DesktopSettings>
     </Form>
@@ -97,18 +97,18 @@
 
     <Resources>
       <bt:Images>
-        <bt:Image id="save-all-icon16" DefaultValue="https://localhost:44355/Images/save-all-16.png"/>
-        <bt:Image id="save-all-icon32" DefaultValue="https://localhost:44355/Images/save-all-32.png"/>
-        <bt:Image id="save-all-icon64" DefaultValue="https://localhost:44355/Images/save-all-64.png"/>
-        <bt:Image id="save-all-icon80" DefaultValue="https://localhost:44355/Images/save-all-80.png"/>
+        <bt:Image id="save-all-icon16" DefaultValue="https://bundynaapoc.z26.web.core.windows.net/Images/save-all-16.png"/>
+        <bt:Image id="save-all-icon32" DefaultValue="https://bundynaapoc.z26.web.core.windows.net/Images/save-all-32.png"/>
+        <bt:Image id="save-all-icon64" DefaultValue="https://bundynaapoc.z26.web.core.windows.net/Images/save-all-64.png"/>
+        <bt:Image id="save-all-icon80" DefaultValue="https://bundynaapoc.z26.web.core.windows.net/Images/save-all-80.png"/>
 
-        <bt:Image id="open-pane-icon16" DefaultValue="https://localhost:44355/Images/open-pane-16.png"/>
-        <bt:Image id="open-pane-icon32" DefaultValue="https://localhost:44355/Images/open-pane-32.png"/>
-        <bt:Image id="open-pane-icon64" DefaultValue="https://localhost:44355/Images/open-pane-64.png"/>
-        <bt:Image id="open-pane-icon80" DefaultValue="https://localhost:44355/Images/open-pane-80.png"/>
+        <bt:Image id="open-pane-icon16" DefaultValue="https://bundynaapoc.z26.web.core.windows.net/Images/open-pane-16.png"/>
+        <bt:Image id="open-pane-icon32" DefaultValue="https://bundynaapoc.z26.web.core.windows.net/Images/open-pane-32.png"/>
+        <bt:Image id="open-pane-icon64" DefaultValue="https://bundynaapoc.z26.web.core.windows.net/Images/open-pane-64.png"/>
+        <bt:Image id="open-pane-icon80" DefaultValue="https://bundynaapoc.z26.web.core.windows.net/Images/open-pane-80.png"/>
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="messageReadTaskPaneUrl" DefaultValue="https://localhost:44355/index.html"/>
+        <bt:Url id="messageReadTaskPaneUrl" DefaultValue="https://bundynaapoc.z26.web.core.windows.net/index.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="groupLabel" DefaultValue="SSO Demo Hosted"/>
@@ -193,28 +193,28 @@
 
       <Resources>
         <bt:Images>
-          <bt:Image id="save-all-icon16" DefaultValue="https://localhost:44355/Images/save-all-16.png"/>
-          <bt:Image id="save-all-icon32" DefaultValue="https://localhost:44355/Images/save-all-32.png"/>
-          <bt:Image id="save-all-icon64" DefaultValue="https://localhost:44355/Images/save-all-64.png"/>
-          <bt:Image id="save-all-icon80" DefaultValue="https://localhost:44355/Images/save-all-80.png"/>
+          <bt:Image id="save-all-icon16" DefaultValue="https://bundynaapoc.z26.web.core.windows.net/Images/save-all-16.png"/>
+          <bt:Image id="save-all-icon32" DefaultValue="https://bundynaapoc.z26.web.core.windows.net/Images/save-all-32.png"/>
+          <bt:Image id="save-all-icon64" DefaultValue="https://bundynaapoc.z26.web.core.windows.net/Images/save-all-64.png"/>
+          <bt:Image id="save-all-icon80" DefaultValue="https://bundynaapoc.z26.web.core.windows.net/Images/save-all-80.png"/>
 
-          <bt:Image id="open-pane-icon16" DefaultValue="https://localhost:44355/Images/open-pane-16.png"/>
-          <bt:Image id="open-pane-icon32" DefaultValue="https://localhost:44355/Images/open-pane-32.png"/>
-          <bt:Image id="open-pane-icon64" DefaultValue="https://localhost:44355/Images/open-pane-64.png"/>
-          <bt:Image id="open-pane-icon80" DefaultValue="https://localhost:44355/Images/open-pane-80.png"/>
+          <bt:Image id="open-pane-icon16" DefaultValue="https://bundynaapoc.z26.web.core.windows.net/Images/open-pane-16.png"/>
+          <bt:Image id="open-pane-icon32" DefaultValue="https://bundynaapoc.z26.web.core.windows.net/Images/open-pane-32.png"/>
+          <bt:Image id="open-pane-icon64" DefaultValue="https://bundynaapoc.z26.web.core.windows.net/Images/open-pane-64.png"/>
+          <bt:Image id="open-pane-icon80" DefaultValue="https://bundynaapoc.z26.web.core.windows.net/Images/open-pane-80.png"/>
 
-          <bt:Image id="app25icon_1x" DefaultValue="https://localhost:4200/assets/images/opm-app-icon-25@1x.png" />
-          <bt:Image id="app25icon_2x" DefaultValue="https://localhost:4200/assets/images/opm-app-icon-25@2x.png" />
-          <bt:Image id="app25icon_3x" DefaultValue="https://localhost:4200/assets/images/opm-app-icon-25@3x.png" />
-          <bt:Image id="app32icon_1x" DefaultValue="https://localhost:4200/assets/images/opm-app-icon-32@1x.png" />
-          <bt:Image id="app32icon_2x" DefaultValue="https://localhost:4200/assets/images/opm-app-icon-32@2x.png" />
-          <bt:Image id="app32icon_3x" DefaultValue="https://localhost:4200/assets/images/opm-app-icon-32@3x.png" />
-          <bt:Image id="app48icon_1x" DefaultValue="https://localhost:4200/assets/images/opm-app-icon-48@1x.png" />
-          <bt:Image id="app48icon_2x" DefaultValue="https://localhost:4200/assets/images/opm-app-icon-48@2x.png" />
-          <bt:Image id="app48icon_3x" DefaultValue="https://localhost:4200/assets/images/opm-app-icon-48@3x.png" />
+          <bt:Image id="app25icon_1x" DefaultValue="https://bundynaapoc.z26.web.core.windows.net/assets/images/opm-app-icon-25@1x.png" />
+          <bt:Image id="app25icon_2x" DefaultValue="https://bundynaapoc.z26.web.core.windows.net/assets/images/opm-app-icon-25@2x.png" />
+          <bt:Image id="app25icon_3x" DefaultValue="https://bundynaapoc.z26.web.core.windows.net/assets/images/opm-app-icon-25@3x.png" />
+          <bt:Image id="app32icon_1x" DefaultValue="https://bundynaapoc.z26.web.core.windows.net/assets/images/opm-app-icon-32@1x.png" />
+          <bt:Image id="app32icon_2x" DefaultValue="https://bundynaapoc.z26.web.core.windows.net/assets/images/opm-app-icon-32@2x.png" />
+          <bt:Image id="app32icon_3x" DefaultValue="https://bundynaapoc.z26.web.core.windows.net/assets/images/opm-app-icon-32@3x.png" />
+          <bt:Image id="app48icon_1x" DefaultValue="https://bundynaapoc.z26.web.core.windows.net/assets/images/opm-app-icon-48@1x.png" />
+          <bt:Image id="app48icon_2x" DefaultValue="https://bundynaapoc.z26.web.core.windows.net/assets/images/opm-app-icon-48@2x.png" />
+          <bt:Image id="app48icon_3x" DefaultValue="https://bundynaapoc.z26.web.core.windows.net/assets/images/opm-app-icon-48@3x.png" />
         </bt:Images>
         <bt:Urls>
-          <bt:Url id="messageReadTaskPaneUrl" DefaultValue="https://localhost:44355/index.html"/>
+          <bt:Url id="messageReadTaskPaneUrl" DefaultValue="https://bundynaapoc.z26.web.core.windows.net/index.html"/>
         </bt:Urls>
         <bt:ShortStrings>
           <bt:String id="groupLabel" DefaultValue="SSO Demo Hosted"/>

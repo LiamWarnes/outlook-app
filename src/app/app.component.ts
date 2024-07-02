@@ -16,12 +16,19 @@ export class AppComponent {
 
   protected isApiSupported: Signal<boolean> = this._isApiSupported.asReadonly();
 
+  protected _loginCounter: WritableSignal<number> = signal(0);
+
+  protected loginCounter: Signal<number> = this._loginCounter.asReadonly();
+
   public async onLoginClick(): Promise<void> {
     this._isApiSupported.set(Office.context.requirements.isSetSupported('IdentityAPI', '1.3'));
     const token: string = await Office.auth.getAccessToken({
       allowConsentPrompt: true,
       allowSignInPrompt: true
     });
+
+    const newLoginCount = this._loginCounter() + 1;
+    this._loginCounter.set(newLoginCount);
     console.log(token);
   }
 }
