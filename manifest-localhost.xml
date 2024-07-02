@@ -17,8 +17,8 @@
   <ProviderName>Contoso</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
-  <DisplayName DefaultValue="AttachmentDemoWeb2" />
-  <Description DefaultValue="AttachmentDemoWeb2 Description"/>
+  <DisplayName DefaultValue="SSO Demo Hosted" />
+  <Description DefaultValue="SSO Demo Hosted Description"/>
   <IconUrl DefaultValue="https://localhost:44355/Images/add-in-icon-lo-res.png"/>
 
   <SupportUrl DefaultValue="https://github.com/OfficeDev/Outlook-Add-in-SSO" />
@@ -111,11 +111,11 @@
         <bt:Url id="messageReadTaskPaneUrl" DefaultValue="https://localhost:44355/index.html"/>
       </bt:Urls>
       <bt:ShortStrings>
-        <bt:String id="groupLabel" DefaultValue="Save to OneDrive"/>
-        <bt:String id="saveAllAttachmentsLabel" DefaultValue="Save all attachments"/>
-        <bt:String id="saveAllAttachmentsTitle" DefaultValue="Save all attachments"/>
-        <bt:String id="paneReadButtonLabel" DefaultValue="Choose attachments"/>
-        <bt:String id="paneReadSuperTipTitle" DefaultValue="Choose attachments to save"/>
+        <bt:String id="groupLabel" DefaultValue="SSO Demo Hosted"/>
+        <bt:String id="saveAllAttachmentsLabel" DefaultValue="SSO Demo Hosted"/>
+        <bt:String id="saveAllAttachmentsTitle" DefaultValue="SSO Demo Hosted"/>
+        <bt:String id="paneReadButtonLabel" DefaultValue="SSO Demo Hosted"/>
+        <bt:String id="paneReadSuperTipTitle" DefaultValue="SSO Demo Hosted"/>
       </bt:ShortStrings>
       <bt:LongStrings>
         <bt:String id="saveAllAttachmentsDesc" DefaultValue="Saves all attachments to the Outlook Attachments folder in your OneDrive. This will overwrite any files that already exist with the same name."/>
@@ -163,6 +163,31 @@
             </ExtensionPoint>
             <!-- Go to http://aka.ms/ExtensionPointsCommands to learn how to add more Extension Points: MessageRead, AppointmentOrganizer, AppointmentAttendee -->
           </DesktopFormFactor>
+
+          <MobileFormFactor>
+            <ExtensionPoint xsi:type="MobileMessageReadCommandSurface">
+              <Group id="commandGroupTestID">
+                <Label resid="saveAllAttachmentsLabel" />
+                <Control xsi:type="MobileButton" id="TaskPane1Btn">
+                  <Label resid="saveAllAttachmentsLabel" />
+                  <Icon xsi:type="bt:MobileIconList">
+                    <bt:Image size="25" scale="1" resid="app25icon_1x" />
+                    <bt:Image size="25" scale="2" resid="app25icon_2x" />
+                    <bt:Image size="25" scale="3" resid="app25icon_3x" />
+                    <bt:Image size="32" scale="1" resid="app32icon_1x" />
+                    <bt:Image size="32" scale="2" resid="app32icon_2x" />
+                    <bt:Image size="32" scale="3" resid="app32icon_3x" />
+                    <bt:Image size="48" scale="1" resid="app48icon_1x" />
+                    <bt:Image size="48" scale="2" resid="app48icon_2x" />
+                    <bt:Image size="48" scale="3" resid="app48icon_3x" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <SourceLocation resid="mreadTaskPaneUrl" />
+                  </Action>
+                </Control>
+              </Group>
+            </ExtensionPoint>
+          </MobileFormFactor>
         </Host>
       </Hosts>
 
@@ -177,16 +202,26 @@
           <bt:Image id="open-pane-icon32" DefaultValue="https://localhost:44355/Images/open-pane-32.png"/>
           <bt:Image id="open-pane-icon64" DefaultValue="https://localhost:44355/Images/open-pane-64.png"/>
           <bt:Image id="open-pane-icon80" DefaultValue="https://localhost:44355/Images/open-pane-80.png"/>
+
+          <bt:Image id="app25icon_1x" DefaultValue="https://localhost:4200/assets/images/opm-app-icon-25@1x.png" />
+          <bt:Image id="app25icon_2x" DefaultValue="https://localhost:4200/assets/images/opm-app-icon-25@2x.png" />
+          <bt:Image id="app25icon_3x" DefaultValue="https://localhost:4200/assets/images/opm-app-icon-25@3x.png" />
+          <bt:Image id="app32icon_1x" DefaultValue="https://localhost:4200/assets/images/opm-app-icon-32@1x.png" />
+          <bt:Image id="app32icon_2x" DefaultValue="https://localhost:4200/assets/images/opm-app-icon-32@2x.png" />
+          <bt:Image id="app32icon_3x" DefaultValue="https://localhost:4200/assets/images/opm-app-icon-32@3x.png" />
+          <bt:Image id="app48icon_1x" DefaultValue="https://localhost:4200/assets/images/opm-app-icon-48@1x.png" />
+          <bt:Image id="app48icon_2x" DefaultValue="https://localhost:4200/assets/images/opm-app-icon-48@2x.png" />
+          <bt:Image id="app48icon_3x" DefaultValue="https://localhost:4200/assets/images/opm-app-icon-48@3x.png" />
         </bt:Images>
         <bt:Urls>
           <bt:Url id="messageReadTaskPaneUrl" DefaultValue="https://localhost:44355/index.html"/>
         </bt:Urls>
         <bt:ShortStrings>
-          <bt:String id="groupLabel" DefaultValue="Save to OneDrive"/>
-          <bt:String id="saveAllAttachmentsLabel" DefaultValue="Save all attachments"/>
-          <bt:String id="saveAllAttachmentsTitle" DefaultValue="Save all attachments"/>
-          <bt:String id="paneReadButtonLabel" DefaultValue="Choose attachments"/>
-          <bt:String id="paneReadSuperTipTitle" DefaultValue="Choose attachments to save"/>
+          <bt:String id="groupLabel" DefaultValue="SSO Demo Hosted"/>
+          <bt:String id="saveAllAttachmentsLabel" DefaultValue="SSO Demo Hosted"/>
+          <bt:String id="saveAllAttachmentsTitle" DefaultValue="SSO Demo Hosted"/>
+          <bt:String id="paneReadButtonLabel" DefaultValue="SSO Demo Hosted"/>
+          <bt:String id="paneReadSuperTipTitle" DefaultValue="SSO Demo Hosted"/>
         </bt:ShortStrings>
         <bt:LongStrings>
           <bt:String id="saveAllAttachmentsDesc" DefaultValue="Saves all attachments to the Outlook Attachments folder in your OneDrive. This will overwrite any files that already exist with the same name."/>
