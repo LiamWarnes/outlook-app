@@ -10,15 +10,15 @@
   <!-- Begin Basic Settings: Add-in metadata, used for all versions of Office unless override provided. -->
 
   <!-- IMPORTANT! Id must be unique for your add-in, if you reuse this manifest ensure that you change this id to a new GUID. -->
-  <Id>3E248EB6-FF40-420B-8D14-D20DDDF83021</Id>
+  <Id>8bb3fd9e-955d-4254-9aee-cd0e0942ec52</Id>
 
   <!--Version. Updates from the store only get triggered if there is a version change. -->
-  <Version>1.0.0.1</Version>
+  <Version>1.0.0.3</Version>
   <ProviderName>Contoso</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
-  <DisplayName DefaultValue="AttachmentDemoWeb2" />
-  <Description DefaultValue="AttachmentDemoWeb2 Description"/>
+  <DisplayName DefaultValue="SSO OBO 2" />
+  <Description DefaultValue="SSO OBO Description"/>
   <IconUrl DefaultValue="https://localhost:44355/Images/add-in-icon-lo-res.png"/>
 
   <SupportUrl DefaultValue="https://github.com/OfficeDev/Outlook-Add-in-SSO" />
@@ -111,11 +111,11 @@
         <bt:Url id="messageReadTaskPaneUrl" DefaultValue="https://localhost:44355/index.html"/>
       </bt:Urls>
       <bt:ShortStrings>
-        <bt:String id="groupLabel" DefaultValue="Save to OneDrive"/>
+        <bt:String id="groupLabel" DefaultValue="SSO OBO"/>
         <bt:String id="saveAllAttachmentsLabel" DefaultValue="Save all attachments"/>
-        <bt:String id="saveAllAttachmentsTitle" DefaultValue="Save all attachments"/>
-        <bt:String id="paneReadButtonLabel" DefaultValue="Choose attachments"/>
-        <bt:String id="paneReadSuperTipTitle" DefaultValue="Choose attachments to save"/>
+        <bt:String id="saveAllAttachmentsTitle" DefaultValue="SSO OBO"/>
+        <bt:String id="paneReadButtonLabel" DefaultValue="SSO OBO"/>
+        <bt:String id="paneReadSuperTipTitle" DefaultValue="SSO OBO"/>
       </bt:ShortStrings>
       <bt:LongStrings>
         <bt:String id="saveAllAttachmentsDesc" DefaultValue="Saves all attachments to the Outlook Attachments folder in your OneDrive. This will overwrite any files that already exist with the same name."/>
@@ -134,6 +134,7 @@
         <Host xsi:type="MailHost">
 
           <DesktopFormFactor>
+            <SupportsSharedFolders>true</SupportsSharedFolders>
             <!-- Message Read -->
             <ExtensionPoint xsi:type="MessageReadCommandSurface">
               <!-- Use the default tab of the ExtensionPoint -->
@@ -182,11 +183,11 @@
           <bt:Url id="messageReadTaskPaneUrl" DefaultValue="https://localhost:44355/index.html"/>
         </bt:Urls>
         <bt:ShortStrings>
-          <bt:String id="groupLabel" DefaultValue="Save to OneDrive"/>
+          <bt:String id="groupLabel" DefaultValue="SSO OBO"/>
           <bt:String id="saveAllAttachmentsLabel" DefaultValue="Save all attachments"/>
-          <bt:String id="saveAllAttachmentsTitle" DefaultValue="Save all attachments"/>
-          <bt:String id="paneReadButtonLabel" DefaultValue="Choose attachments"/>
-          <bt:String id="paneReadSuperTipTitle" DefaultValue="Choose attachments to save"/>
+          <bt:String id="saveAllAttachmentsTitle" DefaultValue="SSO OBO"/>
+          <bt:String id="paneReadButtonLabel" DefaultValue="SSO OBO"/>
+          <bt:String id="paneReadSuperTipTitle" DefaultValue="SSO OBO"/>
         </bt:ShortStrings>
         <bt:LongStrings>
           <bt:String id="saveAllAttachmentsDesc" DefaultValue="Saves all attachments to the Outlook Attachments folder in your OneDrive. This will overwrite any files that already exist with the same name."/>
@@ -195,8 +196,8 @@
       </Resources>
 
       <WebApplicationInfo>
-        <Id>99138ecc-f6bf-48f5-99dd-5cd328db3b62</Id>
-        <Resource>api://localhost:44355/99138ecc-f6bf-48f5-99dd-5cd328db3b62</Resource>
+        <Id>033ad628-c791-4d9a-9773-598701d2f76c</Id>
+        <Resource>api://localhost:44355/033ad628-c791-4d9a-9773-598701d2f76c</Resource>
         <Scopes>
           <Scope>openid</Scope>
           <Scope>profile</Scope>
