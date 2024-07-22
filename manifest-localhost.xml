@@ -7,14 +7,14 @@
   <Version>1.0.0.0</Version>
   <ProviderName>Contoso</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="Outlook Addin"/>
+  <DisplayName DefaultValue="NAA-and-OBO"/>
   <Description DefaultValue="An Office Add-in."/>
-  <IconUrl DefaultValue="https://localhost:{INSERT-HOST-PORT-HERE}/assets/icon-32.png"/>
-  <HighResolutionIconUrl DefaultValue="https://localhost:{INSERT-HOST-PORT-HERE}/assets/icon-64.png"/>
+  <IconUrl DefaultValue="https://localhost:44355/assets/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://localhost:44355/assets/icon-64.png"/>
   <SupportUrl DefaultValue="https://learn.microsoft.com/office/dev/add-ins/overview/office-add-in-code-samples"/>
   <AppDomains>
     <AppDomain>https://login.microsoftonline.com</AppDomain>
-    <AppDomain>https://localhost:{INSERT-HOST-PORT-HERE}</AppDomain>
+    <AppDomain>https://localhost:44355</AppDomain>
   </AppDomains>
   <Hosts>
     <Host Name="Mailbox"/>
@@ -27,7 +27,7 @@
   <FormSettings>
     <Form xsi:type="ItemRead">
       <DesktopSettings>
-        <SourceLocation DefaultValue="https://localhost:{INSERT-HOST-PORT-HERE}/index.html"/>
+        <SourceLocation DefaultValue="https://localhost:44355/index.html"/>
         <RequestedHeight>250</RequestedHeight>
       </DesktopSettings>
     </Form>
@@ -78,20 +78,20 @@
     </Hosts>
     <Resources>
       <bt:Images>
-        <bt:Image id="Icon.16x16" DefaultValue="https://localhost:{INSERT-HOST-PORT-HERE}/assets/icon-16.png"/>
-        <bt:Image id="Icon.32x32" DefaultValue="https://localhost:{INSERT-HOST-PORT-HERE}/assets/icon-32.png"/>
-        <bt:Image id="Icon.80x80" DefaultValue="https://localhost:{INSERT-HOST-PORT-HERE}/assets/icon-80.png"/>
+        <bt:Image id="Icon.16x16" DefaultValue="https://localhost:44355/assets/icon-16.png"/>
+        <bt:Image id="Icon.32x32" DefaultValue="https://localhost:44355/assets/icon-32.png"/>
+        <bt:Image id="Icon.80x80" DefaultValue="https://localhost:44355/assets/icon-80.png"/>
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:{INSERT-HOST-PORT-HERE}/index.html"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:44355/index.html"/>
       </bt:Urls>
       <bt:ShortStrings>
-        <bt:String id="CommandsGroup.Label" DefaultValue="Outlook Addin"/>
-        <bt:String id="TaskpaneButton.Label" DefaultValue="Outlook Addin"/>
-        <bt:String id="TaskpaneButton.SupertipTitle" DefaultValue="Outlook Addin"/>
+        <bt:String id="CommandsGroup.Label" DefaultValue="NAA-and-OBO"/>
+        <bt:String id="TaskpaneButton.Label" DefaultValue="NAA-and-OBO"/>
+        <bt:String id="TaskpaneButton.SupertipTitle" DefaultValue="NAA-and-OBO"/>
       </bt:ShortStrings>
       <bt:LongStrings>
-        <bt:String id="TaskpaneButton.SupertipText" DefaultValue="Open the Outlook Addin add-in"/>
+        <bt:String id="TaskpaneButton.SupertipText" DefaultValue="Open the NAA-and-OBO add-in"/>
       </bt:LongStrings>
     </Resources>
 
@@ -139,20 +139,20 @@
       </Hosts>
       <Resources>
         <bt:Images>
-            <bt:Image id="Icon.16x16" DefaultValue="https://localhost:{INSERT-HOST-PORT-HERE}/assets/icon-16.png"/>
-            <bt:Image id="Icon.32x32" DefaultValue="https://localhost:{INSERT-HOST-PORT-HERE}/assets/icon-32.png"/>
-            <bt:Image id="Icon.80x80" DefaultValue="https://localhost:{INSERT-HOST-PORT-HERE}/assets/icon-80.png"/>
+            <bt:Image id="Icon.16x16" DefaultValue="https://localhost:44355/assets/icon-16.png"/>
+            <bt:Image id="Icon.32x32" DefaultValue="https://localhost:44355/assets/icon-32.png"/>
+            <bt:Image id="Icon.80x80" DefaultValue="https://localhost:44355/assets/icon-80.png"/>
         </bt:Images>
         <bt:Urls>
-            <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:{INSERT-HOST-PORT-HERE}/index.html"/>
+            <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:44355/index.html"/>
         </bt:Urls>
         <bt:ShortStrings>
-            <bt:String id="CommandsGroup.Label" DefaultValue="Outlook Addin"/>
-            <bt:String id="TaskpaneButton.Label" DefaultValue="Outlook Addin"/>
-            <bt:String id="TaskpaneButton.SupertipTitle" DefaultValue="Outlook Addin"/>
+            <bt:String id="CommandsGroup.Label" DefaultValue="NAA-and-OBO"/>
+            <bt:String id="TaskpaneButton.Label" DefaultValue="NAA-and-OBO"/>
+            <bt:String id="TaskpaneButton.SupertipTitle" DefaultValue="NAA-and-OBO"/>
         </bt:ShortStrings>
         <bt:LongStrings>
-            <bt:String id="TaskpaneButton.SupertipText" DefaultValue="Open the Outlook Addin add-in"/>
+            <bt:String id="TaskpaneButton.SupertipText" DefaultValue="Open the NAA-and-OBO add-in"/>
         </bt:LongStrings>
       </Resources>
     </VersionOverrides>
