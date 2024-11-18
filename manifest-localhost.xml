@@ -3,18 +3,18 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
   xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0" xsi:type="MailApp">
-  <Id>{CREATE-A-GUID-AND-INSERT-IT-HERE}</Id>
+  <Id>0c2d1696-5447-4338-81f6-d84bf7984756</Id>
   <Version>1.0.0.0</Version>
   <ProviderName>Contoso</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="Outlook Addin"/>
+  <DisplayName DefaultValue="NAA fromBridgeError"/>
   <Description DefaultValue="An Office Add-in."/>
-  <IconUrl DefaultValue="https://localhost:{INSERT-HOST-PORT-HERE}/assets/icon-32.png"/>
-  <HighResolutionIconUrl DefaultValue="https://localhost:{INSERT-HOST-PORT-HERE}/assets/icon-64.png"/>
+  <IconUrl DefaultValue="https://localhost:4200/assets/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://localhost:4200/assets/icon-64.png"/>
   <SupportUrl DefaultValue="https://learn.microsoft.com/office/dev/add-ins/overview/office-add-in-code-samples"/>
   <AppDomains>
     <AppDomain>https://login.microsoftonline.com</AppDomain>
-    <AppDomain>https://localhost:{INSERT-HOST-PORT-HERE}</AppDomain>
+    <AppDomain>https://localhost:4200</AppDomain>
   </AppDomains>
   <Hosts>
     <Host Name="Mailbox"/>
@@ -27,7 +27,7 @@
   <FormSettings>
     <Form xsi:type="ItemRead">
       <DesktopSettings>
-        <SourceLocation DefaultValue="https://localhost:{INSERT-HOST-PORT-HERE}/index.html"/>
+        <SourceLocation DefaultValue="https://localhost:4200/index.html"/>
         <RequestedHeight>250</RequestedHeight>
       </DesktopSettings>
     </Form>
@@ -78,17 +78,17 @@
     </Hosts>
     <Resources>
       <bt:Images>
-        <bt:Image id="Icon.16x16" DefaultValue="https://localhost:{INSERT-HOST-PORT-HERE}/assets/icon-16.png"/>
-        <bt:Image id="Icon.32x32" DefaultValue="https://localhost:{INSERT-HOST-PORT-HERE}/assets/icon-32.png"/>
-        <bt:Image id="Icon.80x80" DefaultValue="https://localhost:{INSERT-HOST-PORT-HERE}/assets/icon-80.png"/>
+        <bt:Image id="Icon.16x16" DefaultValue="https://localhost:4200/assets/icon-16.png"/>
+        <bt:Image id="Icon.32x32" DefaultValue="https://localhost:4200/assets/icon-32.png"/>
+        <bt:Image id="Icon.80x80" DefaultValue="https://localhost:4200/assets/icon-80.png"/>
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:{INSERT-HOST-PORT-HERE}/index.html"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:4200/index.html"/>
       </bt:Urls>
       <bt:ShortStrings>
-        <bt:String id="CommandsGroup.Label" DefaultValue="Outlook Addin"/>
-        <bt:String id="TaskpaneButton.Label" DefaultValue="Outlook Addin"/>
-        <bt:String id="TaskpaneButton.SupertipTitle" DefaultValue="Outlook Addin"/>
+        <bt:String id="CommandsGroup.Label" DefaultValue="NAA fromBridgeError"/>
+        <bt:String id="TaskpaneButton.Label" DefaultValue="NAA fromBridgeError"/>
+        <bt:String id="TaskpaneButton.SupertipTitle" DefaultValue="NAA fromBridgeError"/>
       </bt:ShortStrings>
       <bt:LongStrings>
         <bt:String id="TaskpaneButton.SupertipText" DefaultValue="Open the Outlook Addin add-in"/>
@@ -139,17 +139,17 @@
       </Hosts>
       <Resources>
         <bt:Images>
-            <bt:Image id="Icon.16x16" DefaultValue="https://localhost:{INSERT-HOST-PORT-HERE}/assets/icon-16.png"/>
-            <bt:Image id="Icon.32x32" DefaultValue="https://localhost:{INSERT-HOST-PORT-HERE}/assets/icon-32.png"/>
-            <bt:Image id="Icon.80x80" DefaultValue="https://localhost:{INSERT-HOST-PORT-HERE}/assets/icon-80.png"/>
+            <bt:Image id="Icon.16x16" DefaultValue="https://localhost:4200/assets/icon-16.png"/>
+            <bt:Image id="Icon.32x32" DefaultValue="https://localhost:4200/assets/icon-32.png"/>
+            <bt:Image id="Icon.80x80" DefaultValue="https://localhost:4200/assets/icon-80.png"/>
         </bt:Images>
         <bt:Urls>
-            <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:{INSERT-HOST-PORT-HERE}/index.html"/>
+            <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:4200/index.html"/>
         </bt:Urls>
         <bt:ShortStrings>
-            <bt:String id="CommandsGroup.Label" DefaultValue="Outlook Addin"/>
-            <bt:String id="TaskpaneButton.Label" DefaultValue="Outlook Addin"/>
-            <bt:String id="TaskpaneButton.SupertipTitle" DefaultValue="Outlook Addin"/>
+            <bt:String id="CommandsGroup.Label" DefaultValue="NAA fromBridgeError"/>
+            <bt:String id="TaskpaneButton.Label" DefaultValue="NAA fromBridgeError"/>
+            <bt:String id="TaskpaneButton.SupertipTitle" DefaultValue="NAA fromBridgeError"/>
         </bt:ShortStrings>
         <bt:LongStrings>
             <bt:String id="TaskpaneButton.SupertipText" DefaultValue="Open the Outlook Addin add-in"/>
