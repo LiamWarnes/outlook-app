@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { createNestablePublicClientApplication, IPublicClientApplication } from '@azure/msal-browser';
+import { createNestablePublicClientApplication, IPublicClientApplication, SilentRequest } from '@azure/msal-browser';
 
 @Component({
   selector: 'app-root',
@@ -21,20 +21,22 @@ export class AppComponent {
       if (!this.pca) {
         this.pca = await createNestablePublicClientApplication({
           cache: {
-            cacheLocation: 'localStorage',
+            cacheLocation: 'localStorage'
           },
           auth: {
             clientId: '5375418b-f2d2-460d-97bb-07d0fb552357',
-            redirectUri: `${window.location.origin}/auth.html`,
-            postLogoutRedirectUri: `${window.location.origin}/index.html`,
+
+            // Comment out the following line to successfully acquire a token via NAA
+            clientCapabilities: [""]
           }
         });
       }
 
       try {
-        const authResult = await this.pca.acquireTokenSilent({
-          scopes: ['openid', 'profile']
-        });
+        const request = {
+          account: undefined
+        } as SilentRequest;
+        const authResult = await this.pca.acquireTokenSilent(request);
 
         console.log('Successfully acquired token via NAA');
         console.log(authResult);
